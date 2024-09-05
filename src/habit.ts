@@ -13,6 +13,11 @@ export class Habit {
     }
 
     public setDayCompleted = (date: Date) => {
+
+        if(this.daysCompleted.includes(date)){
+            throw new Error("This habit already was compleated in this day")
+        }
+
         this.daysCompleted.push(date)
     }
 }
